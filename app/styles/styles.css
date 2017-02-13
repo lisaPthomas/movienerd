@@ -1,0 +1,9 @@
+#divContainer {
+    height: 400px;
+    width: 250px;
+    overflow: auto;
+}
+
+#searchPanels {
+    margin-top: 20px;
+}

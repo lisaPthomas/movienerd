@@ -1,0 +1,30 @@
+<body>
+    <h1>Movie Nerd</h1>
+    <div ui-view></div>
+    <div class="input-group col-sm-6 col-lg-8">
+        <input ng-model="vm.searchMovie" type="text" class="form-control" placeholder="Search for movie title...">
+        <span class="input-group-btn">
+            <button  class="btn btn-default" type="button" ng-click="vm.getMovie(vm.searchMovie)">Search</button>
+            </span>
+    </div>
+    <div id="searchPanels" class="row form-group">
+        <div class="col-xs-10 col-sm-4 col-md-3" id="divContainer" ng-repeat="searches in vm.movieData">
+            <div id="panel-repeat" class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{searches.Title}}</h3>
+                </div>
+                <div class="panel-image hide-panel-body">
+                    <img ng-src={{searches.Poster}} class="img-responsive center-block" />
+                </div>
+                <div class="panel-body">
+                    <h4>{{searches.Title}}</h4>
+                    <p>{{}}</p>
+                </div>
+                <div class="panel-footer text-center">
+                    <a ui-sref="maindetail({movieDetailId: '{{searches.imdbID}}'})">Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
